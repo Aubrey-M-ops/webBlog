@@ -1,0 +1,14 @@
+.post-header{
+    margin: 24px auto var(--content-gap);
+}
+.post-title{
+    margin-bottom: 2px;
+    font-size: 36px;
+}
+.post-content h1{
+    margin: 28px auto 20px;
+    font-size: 28px;
+}
+.post-content p{
+    margin-bottom: var(--content-gap);
+}
