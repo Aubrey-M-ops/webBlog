@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     max-width: calc(var(--nav-width) + var(--gap) * 2);
     margin-inline-start: auto;
     margin-inline-end: auto;
@@ -21,7 +22,6 @@
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
-    margin-left: 900px;
 }
 #menu li+li{
     margin-inline-start: var(--gap);
