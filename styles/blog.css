@@ -21,7 +21,7 @@
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
-    margin-right: 900px;
+    margin-left: 900px;
 }
 #menu li+li{
     margin-inline-start: var(--gap);
