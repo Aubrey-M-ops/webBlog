@@ -1,0 +1,17 @@
+{
+    "bigTitle": "👋 Mohan Li' s BLOG",
+    "intro": "Hi, this is Mohan Li, a junior year student in NEU. My major is Software Engineering. I am obssessed with front-end field, and I am an FE intern in Byte Dance now.",
+    "MyProject": [
+        {
+            "title": "Final Report of Big Data Course",
+            "description": "Before the course, I had a deeply misunderstanding about big data. I used to suppose that big data only refers to large sets of data and the only thing I heard about it was Hadoop. However, the importance of big data doesn’t simply revolve...",
+            "result_page": "public/Final Report.pdf"
+        },
+        {
+            "title": "Principles in action of bilibili",
+            "description": "Before the course, I had a deeply misunderstanding about big data. I used to suppose that big data only refers to large sets of data and the only thing I heard about it was Hadoop. However, the importance of big data...",
+            "result_page": "public/bilibili.pdf"
+
+        }
+    ]
+}

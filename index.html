@@ -5,16 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mohan li's blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/blog.css" />
+    <!--request data from json on server-->
+    <script>
+      function loadXMLDoc() {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+          //  IE7+, Firefox, Chrome, Opera, Safari browser executes the code
+          xmlhttp = new XMLHttpRequest();
+        } else {
+          // IE6, IE5 browser executes the code
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {  
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            myObj = JSON.parse(this.responseText);
+            // top title and introduction
+            document.getElementById("bigTitle").innerText = myObj.bigTitle
+            document.getElementById("intro").innerText = myObj.intro
+            // article part
+            myObj.MyProject.forEach((value, index) => {
+              document.getElementsByClassName("title")[index].innerText =
+                value["title"];
+              document.getElementsByClassName("description")[index].innerText =
+                value["description"];
+            });
+          }
+        };
+        xmlhttp.open("GET", "article.json", true);
+        xmlhttp.send();
+      }
+    </script>
   </head>
-  <body>
+  <body onload="loadXMLDoc()">
     <!-- header -->
     <header class="header" id="header">
       <nav class="nav">
         <div class="logo">
-          <a href="">Mohan's blog</a>
+          <a  href="">Mohan's blog</a>
         </div>
         <ul id="menu">
           <li><a href="../articles/BigData.html">big data</a></li>
@@ -28,50 +58,34 @@
       <!-- my info -->
       <article class="home-info">
         <header class="home-header">
-          <h1>👋 Mohan Li' s BLOG</h1>
+          <h1 id="bigTitle"></h1>
         </header>
         <section class="header-content">
-          <p>
-            Hi, this is Mohan Li, a junior year student in NEU. My major is
-            Software Engineering. I am obssessed with front-end field, and I am
-            an FE intern in Byte Dance now.
+          <p id="intro">
           </p>
         </section>
       </article>
       <!-- article entries -->
       <article class="post-entry">
         <header class="entry-header">
-          <h2>Final Report of Big Data Course</h2>
+          <h2 class="title"></h2>
         </header>
         <section class="entry-content">
-          <p>
-            Before the course, I had a deeply misunderstanding about big data. I
-            used to suppose that big data only refers to large sets of data and
-            the only thing I heard about it was Hadoop. However, the importance
-            of big data doesn’t simply revolve...
-          </p>
+          <p class="description"></p>
         </section>
         <footer class="entry-footer">
           <span>June 4, 2022</span>
           &nbsp;·&nbsp;28 min&nbsp;·&nbsp;Mohan Li
         </footer>
-        <a
-          class="entry-link"
-          aria-label="Cloud Factory Project"
-          href="./articles/BigData.html"
-        ></a>
+        <a class="entry-link" href="./articles/BigData.html"></a>
       </article>
 
       <article class="post-entry">
         <header class="entry-header">
-          <h2>principles in action of bilibili</h2>
+          <h2 class="title"></h2>
         </header>
         <section class="entry-content">
-          <p>
-            Before the course, I had a deeply misunderstanding about big data. I
-            used to suppose that big data only refers to large sets of data and
-            the only thing I heard about it was Hadoop. However, the importance
-            of big data doesn’t simply revolve...
+          <p class="description">
           </p>
         </section>
         <footer class="entry-footer">
@@ -80,13 +94,9 @@
         </footer>
         <a
           class="entry-link"
-          aria-label="Cloud Factory Project"
           href="./articles/bilibili.html"
         ></a>
       </article>
     </main>
-
-    <script src="scripts/blog.js"></script>
   </body>
 </html>
-<script src="./scripts/blog.js"></script>
